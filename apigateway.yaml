@@ -1,0 +1,105 @@
+swagger: "2.0"
+
+info:
+  title: convertergateway
+  description: converter api gateway
+  version: 1.0.0
+
+host: us-central1-coe-558-project.cloudfunctions.net
+
+basePath: /
+
+schemes:
+  - https
+
+paths:
+  /poundsToKg:
+    post:
+      summary: convert Pounds to KG
+      operationId: Lb to KG
+      description: Lb to KG
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-558-project.cloudfunctions.net/poundsToKg
+    options:
+      summary: CORS support
+      operationId: Lb to KG preflight
+      description: Lb to KG preflight
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Preflight request successful
+      x-google-backend:
+        address: https://us-central1-coe-558-project.cloudfunctions.net/poundsToKg
+
+  /milesToKm:
+    post:
+      summary: convert Miles to KM
+      operationId: M to KM
+      description: M to KM
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://miles-to-km-nvvfnwpcja-uc.a.run.app
+    options:
+      summary: CORS support
+      operationId: M to KM preflight
+      description: M to KM preflight
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Preflight request successful
+      x-google-backend:
+        address: https://miles-to-km-nvvfnwpcja-uc.a.run.app
+
+  /fahrenheitToC:
+    post:
+      summary: convert Fahrenheit to C
+      operationId: F to C
+      description: F to C
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-558-project.cloudfunctions.net/fahrenheitToC
+    options:
+      summary: CORS support
+      operationId: F to C preflight
+      description: F to C preflight
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Preflight request successful
+      x-google-backend:
+        address: https://us-central1-coe-558-project.cloudfunctions.net/fahrenheitToC
+
+  /dbContent:
+    get:
+      summary: Get all database content
+      operationId: get db content
+      description: get db content
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-558-project.cloudfunctions.net/dbContent/fetchData
